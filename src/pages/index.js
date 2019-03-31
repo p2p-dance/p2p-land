@@ -1,12 +1,11 @@
-import React, { useState } from "react"
-import { Link } from "gatsby"
-import hax from "../images/hax.jpg"
-import p2pnodes from "../images/p2p-nodes.png"
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import React, { useState } from 'react';
+import hax from '../images/hax.jpg';
+import p2pnodes from '../images/p2p-nodes.png';
+import Layout from '../components/layout';
+import SEO from '../components/seo';
 
 const IndexPage = () => {
-  const [count, setCount] = useState(0)
+  const [bool, setBool] = useState(true);
 
   return (
     <Layout>
@@ -17,12 +16,19 @@ const IndexPage = () => {
           maxWidth: 500,
         }}
       >
-        <img src={p2pnodes} alt="p2p-nodes-graph" />
-        <p>You clicked {count} times</p>
-        <button onClick={() => setCount(count + 1)}>Click me</button>
+        {bool ? (
+          <img
+            src={p2pnodes}
+            alt="p2p-nodes-graph"
+            onClick={() => setBool(!bool)}
+          />
+        ) : (
+          <img src={hax} alt="p2p-hax" onClick={() => setBool(!bool)} />
+        )}
+        <p>{bool}</p>
       </div>
     </Layout>
-  )
-}
+  );
+};
 
-export default IndexPage
+export default IndexPage;

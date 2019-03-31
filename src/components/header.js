@@ -1,13 +1,12 @@
-import { Link } from "gatsby"
-import PropTypes from "prop-types"
-import React from "react"
-import p2pgif from "../images/p2pdance.gif"
+import { Link } from 'gatsby';
+import PropTypes from 'prop-types';
+import React from 'react';
+import p2pgif from '../images/p2pdance.gif';
 
 const Header = ({ siteTitle }) => (
   <header
     style={{
-      background: `linear-gradient(teal,white)`,
-      marginBottom: `1.45rem`,
+      marginBottom: `1rem`,
     }}
   >
     <div
@@ -24,14 +23,14 @@ const Header = ({ siteTitle }) => (
       </h1>
     </div>
   </header>
-)
+);
 
 Header.propTypes = {
   siteTitle: PropTypes.string,
-}
+};
 
 Header.defaultProps = {
   siteTitle: ``,
-}
+};
 
-export default Header
+export default Header;
